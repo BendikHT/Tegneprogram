@@ -5,27 +5,21 @@
 }
 
 body{
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+
     overflow: hidden;
 }
 
 canvas{
     border: 1px solid black;
+    grid-row: 2/3;
+    grid-column: 2/3;
 }
 
 .tegnebrett{
     display: grid;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    grid-template-columns: 100px auto 100px;
+    grid-template-rows: 50px auto 100px;
+    width: 80%;
     height: 100%;
 }
 
