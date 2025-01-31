@@ -8,7 +8,6 @@ const farge1 = document.getElementById('farge1')
 
 let xMouse = 0
 let yMouse = 0
-let rect = canvas.getBoundingClientRect();
 
 tegnebrett.style.gridTemplateColumns = `100px ${width}px 100px`
 tegnebrett.style.gridTemplateRows = `100px ${height}px 100px`
@@ -25,6 +24,7 @@ function rektangel5(x, y) {
 function mousecordinate(event) {
     canvas.addEventListener("mousemove", function (event) {
         if (event.buttons === 1) {
+            let rect = canvas.getBoundingClientRect();
             yMouse = event.clientY - rect.top
             xMouse = event.clientX - rect.left
             rektangel5(xMouse, yMouse)
