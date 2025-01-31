@@ -1,17 +1,19 @@
-const width = "500"
-const height = "500"
+let width = "500"
+let height = "500"
 const canvas = document.querySelector('canvas')
 const ctx = canvas.getContext('2d')
-canvas.width = width
-canvas.height = height
+
 const tegnebrett = document.querySelector('.tegnebrett')
+const farge1 = document.getElementById('farge1')
 
 let xMouse = 0
 let yMouse = 0
 let rect = canvas.getBoundingClientRect();
 
-tegnebrett.style.gridTemplateColumns = "100px width 100px"
-tegnebrett.style.gridTemplateRows = "100px height 100px"
+tegnebrett.style.gridTemplateColumns = `100px ${width}px 100px`
+tegnebrett.style.gridTemplateRows = `100px ${height}px 100px`
+canvas.width = width
+canvas.height = height
 
 function rektangel5(x, y) {
     ctx.beginPath()
@@ -41,3 +43,7 @@ Coloris({
         ctx.fillStyle = color
     }   
 })
+
+document.addEventListener('coloris:pick', event => {
+    console.log('New color', event.detail.color);
+  });

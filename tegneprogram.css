@@ -5,26 +5,18 @@
 }
 
 body{
-
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(230, 223, 223);
 }
 
 canvas{
     border: 1px solid black;
     grid-row: 2/3;
     grid-column: 2/3;
-}
-
-.tegnebrett{
-    display: grid;
-    grid-template-columns: 100px auto 100px;
-    grid-template-rows: 50px auto 100px;
-    width: 80%;
-    height: 100%;
-}
-
-.knapper{
-    margin: 10px;
+    background-color: white;
 }
 
 i{
@@ -34,4 +26,45 @@ i{
 
 button{
     height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.tegnebrett{
+    display: grid;
+    grid-template-columns: 100px auto 100px;
+    grid-template-rows: 50px auto 100px;
+}
+
+.tools{
+    margin: 10px;
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+.farger{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.fargeboks{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(230, 223, 223);
+    margin: 10px;
+}
+
+.clr-field input{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
 }

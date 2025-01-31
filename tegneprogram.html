@@ -15,12 +15,31 @@
 
 <body>
     <div class="tegnebrett">
-        <canvas onmouseover="mousecordinate(event)"></canvas>
-        <input type="text" data-coloris>
-        <div class="knapper">
-            <button onclick="clearCanvas()"><i class="fa-solid fa-trash-can"></i></button>
+        <div class="farger">
+            <div class="fargeboks">
+                <input type="text" data-coloris id="farge1">
+            </div>
+            <div class="fargeboks">
+                <input type="text" data-coloris id="farge2">
+            </div>
+            <div class="fargeboks">
+                <input type="text" data-coloris id="farge3">
+            </div>
+            <div class="fargeboks">
+                <input type="text" data-coloris id="farge4">
+            </div>
         </div>
-        
+        <canvas onmouseover="mousecordinate(event)"></canvas>
+
+        <div class="tools">
+            <button onclick="clearCanvas()"><i class="fa-solid fa-trash-can"></i></button>
+            <input type="range" min="1" max="1000" value="1" id="sørrelse ">
+        </div>
+
+        <div class="pensel">
+
+        </div>
+
     </div>
     <script src="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.js"></script>
     <script src="tegneprogram.js"></script>
