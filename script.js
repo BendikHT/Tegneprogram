@@ -5,15 +5,13 @@ const ctx = canvas.getContext('2d')
 
 const tegnebrett = document.querySelector('.tegnebrett')
 const farge1 = document.getElementById('farge1')
-const form = document.querySelectorAll('form')
 
 let inputWidth = document.getElementById('width')
 let inputHeight = document.getElementById('height')
-
-
-
 let xMouse = 0
 let yMouse = 0
+let pxStorrelse = 5
+let valgtFarge = 'black'
 
 function start() {
     tegnebrett.style.gridTemplateColumns = `100px ${width}px 100px`
@@ -26,23 +24,14 @@ function start() {
 
 start()
 
-function rektangel5(x, y) {
+function rektangel(x, y, breddex, breddey, farge) {
     ctx.beginPath()
-    ctx.rect(x, y, 5, 5)
-    ctx.fillStyle = 'black'
+    ctx.rect(x, y, breddex, breddey)
+    ctx.fillStyle = farge
     ctx.fill()
 }
 
-function mousecordinate(event) {
-    canvas.addEventListener("mousemove", function (event) {
-        if (event.buttons === 1) {
-            let rect = canvas.getBoundingClientRect();
-            yMouse = event.clientY - rect.top
-            xMouse = event.clientX - rect.left
-            rektangel5(xMouse, yMouse)
-        }
-    })
-}
+
 
 function clearCanvas() {
     ctx.clearRect(0, 0, width, height)
@@ -83,4 +72,47 @@ function lagreBilde() {
     downloadLink.download = 'tegning.png'
     downloadLink.href = canvas.toDataURL()
     downloadLink.click()
+}
+
+function stylePensel(knappId) {
+
+    tjukkelseId = ["hviskeler", "2pxKnapp", "5pxKnapp", "10pxKnapp", "20pxKnapp"]
+
+    for (let i = 0; i < tjukkelseId.length; i++) {
+        let knapp = document.getElementById(tjukkelseId[i])
+        knapp.style.border = "1px solid black"
+    }
+
+    let trykket = document.getElementById(knappId);
+    if (knappId == "2pxKnapp") {
+        pxStorrelse = 2
+        trykket.style.border = "2px solid black"
+        }
+    else if (knappId == "5pxKnapp") {
+        pxStorrelse = 5
+        trykket.style.border = "2px solid black"
+    }
+    else if (knappId == "10pxKnapp") {
+        pxStorrelse = 10
+        trykket.style.border = "2px solid black"
+    }
+    else if (knappId == "20pxKnapp") {
+        pxStorrelse = 20
+        trykket.style.border = "2px solid black"
+    }
+    else if (knappId == "hviskeler") {
+        valgtFarge = "white"
+        trykket.style.border = "2px solid black"
+}
+}
+
+function mousecordinate(event) {
+    canvas.addEventListener("mousemove", function (event) {
+        if (event.buttons === 1) {
+            let rect = canvas.getBoundingClientRect();
+            yMouse = event.clientY - rect.top
+            xMouse = event.clientX - rect.left
+            rektangel(xMouse, yMouse, pxStorrelse, pxStorrelse, valgtFarge)
+        }
+    })
 }
