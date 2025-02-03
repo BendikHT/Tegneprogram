@@ -15,10 +15,14 @@ let inputHeight = document.getElementById('height')
 let xMouse = 0
 let yMouse = 0
 
-tegnebrett.style.gridTemplateColumns = `100px ${width}px 100px`
-tegnebrett.style.gridTemplateRows = `100px ${height}px 100px`
-canvas.width = width
-canvas.height = height
+function start() {
+    tegnebrett.style.gridTemplateColumns = `100px ${width}px 100px`
+    tegnebrett.style.gridTemplateRows = `100px ${height}px 100px`
+    canvas.width = width
+    canvas.height = height
+}
+
+start()
 
 function rektangel5(x, y) {
     ctx.beginPath()
@@ -55,19 +59,26 @@ document.addEventListener('coloris:pick', event => {
 });
 
 inputWidth.addEventListener('input', function () {
-    if (inputWidth.value/window.innerWidth <= 0.85 && inputWidth.value > 500) {
+    if (inputWidth.value / window.innerWidth <= 0.85 && inputWidth.value >= 500) {
         width = inputWidth.value
         canvas.width = width
         tegnebrett.style.gridTemplateColumns = `100px ${width}px 100px`
     }
-    
+
 })
 
 inputHeight.addEventListener('input', function () {
-    if (inputHeight.value/window.innerHeight <= 0.85 && inputHeight.value > 500) {
+    if (inputHeight.value / window.innerHeight <= 0.85 && inputHeight.value >= 500) {
         height = inputHeight.value
         canvas.height = height
         tegnebrett.style.gridTemplateRows = `100px ${height}px 100px`
     }
-    console.log(height/window.innerHeight)
+    console.log(height / window.innerHeight)
 })
+
+function lagreBilde() {
+    let link = document.createElement('a')
+    link.download = 'tegning.png'
+    link.href = canvas.toDataURL()
+    link.click()
+}

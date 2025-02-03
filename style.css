@@ -24,13 +24,6 @@ i{
     margin: 0px 5px 0px 5px
 }
 
-button{
-    height: 40px;
-    width: 40px;
-    cursor: pointer;
-    margin: 20px;
-}
-
 .tegnebrett{
     display: grid;
     grid-template-columns: 100px auto 100px;
@@ -50,6 +43,8 @@ button{
     width: 60px;
     height: 40px;
     margin: 20px;
+    border-radius: 5px;
+    border: 1px solid black;
 }
 .farger{
     grid-column: 1/2;
@@ -61,7 +56,7 @@ button{
     
 }
 
-.fargeboks{
+.fargeboks, button{
     display: flex;
     align-items: center;
     justify-content: center;
