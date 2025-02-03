@@ -5,6 +5,12 @@ const ctx = canvas.getContext('2d')
 
 const tegnebrett = document.querySelector('.tegnebrett')
 const farge1 = document.getElementById('farge1')
+const inputWidth = document.getElementById('width')
+const inputHeight = document.getElementById('height')
+
+width = inputWidth.value
+height = inputHeight.value
+
 
 let xMouse = 0
 let yMouse = 0
