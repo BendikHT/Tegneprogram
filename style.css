@@ -42,6 +42,11 @@ button{
     grid-row: 3/4;
 }
 
+#width, #height{
+    width: 60px;
+    height: 40px;
+    margin: 0;
+}
 .farger{
     grid-column: 1/2;
     grid-row: 2/3;

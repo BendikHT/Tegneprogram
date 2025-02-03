@@ -5,11 +5,11 @@ const ctx = canvas.getContext('2d')
 
 const tegnebrett = document.querySelector('.tegnebrett')
 const farge1 = document.getElementById('farge1')
-const inputWidth = document.getElementById('width')
-const inputHeight = document.getElementById('height')
+const form = document.querySelectorAll('form')
 
-width = inputWidth.value
-height = inputHeight.value
+let inputWidth = document.getElementById('width')
+let inputHeight = document.getElementById('height')
+
 
 
 let xMouse = 0
@@ -34,7 +34,6 @@ function mousecordinate(event) {
             yMouse = event.clientY - rect.top
             xMouse = event.clientX - rect.left
             rektangel5(xMouse, yMouse)
-            console.log(event)
         }
     })
 }
@@ -48,9 +47,27 @@ Coloris({
     color: '#000000',
     onChange(color) {
         ctx.fillStyle = color
-    }   
+    }
 })
 
 document.addEventListener('coloris:pick', event => {
     console.log('New color', event.detail.color);
-  });
+});
+
+inputWidth.addEventListener('input', function () {
+    if (inputWidth.value/window.innerWidth <= 0.85 && inputWidth.value > 500) {
+        width = inputWidth.value
+        canvas.width = width
+        tegnebrett.style.gridTemplateColumns = `100px ${width}px 100px`
+    }
+    
+})
+
+inputHeight.addEventListener('input', function () {
+    if (inputHeight.value/window.innerHeight <= 0.85 && inputHeight.value > 500) {
+        height = inputHeight.value
+        canvas.height = height
+        tegnebrett.style.gridTemplateRows = `100px ${height}px 100px`
+    }
+    console.log(height/window.innerHeight)
+})
