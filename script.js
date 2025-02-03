@@ -28,6 +28,7 @@ function mousecordinate(event) {
             yMouse = event.clientY - rect.top
             xMouse = event.clientX - rect.left
             rektangel5(xMouse, yMouse)
+            console.log(event)
         }
     })
 }
