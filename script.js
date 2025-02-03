@@ -20,6 +20,8 @@ function start() {
     tegnebrett.style.gridTemplateRows = `100px ${height}px 100px`
     canvas.width = width
     canvas.height = height
+    ctx.fillStyle = 'white'
+    ctx.fillRect(0, 0, width, height)
 }
 
 start()
@@ -62,7 +64,7 @@ inputWidth.addEventListener('input', function () {
     if (inputWidth.value / window.innerWidth <= 0.85 && inputWidth.value >= 500) {
         width = inputWidth.value
         canvas.width = width
-        tegnebrett.style.gridTemplateColumns = `100px ${width}px 100px`
+        start()
     }
 
 })
@@ -71,14 +73,14 @@ inputHeight.addEventListener('input', function () {
     if (inputHeight.value / window.innerHeight <= 0.85 && inputHeight.value >= 500) {
         height = inputHeight.value
         canvas.height = height
-        tegnebrett.style.gridTemplateRows = `100px ${height}px 100px`
+        start()
     }
     console.log(height / window.innerHeight)
 })
 
 function lagreBilde() {
-    let link = document.createElement('a')
-    link.download = 'tegning.png'
-    link.href = canvas.toDataURL()
-    link.click()
+    let downloadLink = document.createElement('a')
+    downloadLink.download = 'tegning.png'
+    downloadLink.href = canvas.toDataURL()
+    downloadLink.click()
 }
