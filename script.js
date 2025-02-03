@@ -6,6 +6,7 @@ const ctx = canvas.getContext('2d')
 const tegnebrett = document.querySelector('.tegnebrett')
 const farge1 = document.getElementById('farge1')
 
+
 let inputWidth = document.getElementById('width')
 let inputHeight = document.getElementById('height')
 let xMouse = 0
@@ -86,24 +87,29 @@ function stylePensel(knappId) {
     let trykket = document.getElementById(knappId);
     if (knappId == "2pxKnapp") {
         pxStorrelse = 2
+        valgtFarge = "black"
         trykket.style.border = "2px solid black"
         }
     else if (knappId == "5pxKnapp") {
         pxStorrelse = 5
+        valgtFarge = "black"
         trykket.style.border = "2px solid black"
     }
     else if (knappId == "10pxKnapp") {
         pxStorrelse = 10
+        valgtFarge = "black"
         trykket.style.border = "2px solid black"
     }
     else if (knappId == "20pxKnapp") {
         pxStorrelse = 20
+        valgtFarge = "black"
         trykket.style.border = "2px solid black"
     }
     else if (knappId == "hviskeler") {
+        pxStorrelse = 5
         valgtFarge = "white"
         trykket.style.border = "2px solid black"
-}
+    }
 }
 
 function mousecordinate(event) {
