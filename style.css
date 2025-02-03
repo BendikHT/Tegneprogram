@@ -28,6 +28,7 @@ button{
     height: 40px;
     width: 40px;
     cursor: pointer;
+    margin: 20px;
 }
 
 .tegnebrett{
@@ -37,15 +38,18 @@ button{
 }
 
 .tools{
-    margin: 10px;
     grid-column: 2/3;
     grid-row: 3/4;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
 }
 
 #width, #height{
     width: 60px;
     height: 40px;
-    margin: 0;
+    margin: 20px;
 }
 .farger{
     grid-column: 1/2;
@@ -54,6 +58,7 @@ button{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    
 }
 
 .fargeboks{
@@ -64,12 +69,20 @@ button{
     height: 40px;
     border: 1px solid black;
     border-radius: 5px;
-    background-color: rgb(230, 223, 223);
-    margin: 10px;
+    margin: 20px;
 }
 
 .clr-field input{
     width: 30px;
     height: 30px;
     cursor: pointer;
+}
+
+.pensel{
+    grid-column: 3/4;
+    grid-row: 2/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
