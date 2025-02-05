@@ -38,16 +38,11 @@ function clearCanvas() {
     ctx.clearRect(0, 0, width, height)
 }
 
-Coloris({
-    el: '[data-coloris]',
-    color: '#000000',
-    onChange(color) {
-        ctx.fillStyle = color
-    }
-})
+
 
 document.addEventListener('coloris:pick', event => {
     console.log('New color', event.detail.color);
+    valgtFarge = event.detail.color
 });
 
 inputWidth.addEventListener('input', function () {
