@@ -127,7 +127,6 @@ function stylePenselFarge(knappId) {
 
     else if (knappId == "fyll"){
         trykketFarge.style.border = "2px solid black"
-        
     }
 }
 
