@@ -68,6 +68,7 @@ i{
 }
 
 .clr-field input{
+    border-radius: 10px;
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -80,4 +81,22 @@ i{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+.rgbBoks{
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+#rød{
+    background-color:red;
+}
+
+#blå{
+    background-color: blue;
+}
+
+#grøn{
+    background-color: green;
 }

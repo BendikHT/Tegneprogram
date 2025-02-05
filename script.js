@@ -1,5 +1,6 @@
 let width = "500"
 let height = "500"
+let detTegnes = false
 const canvas = document.querySelector('canvas')
 const ctx = canvas.getContext('2d')
 
@@ -25,23 +26,13 @@ function start() {
 
 start()
 
-function rektangel(x, y, breddex, breddey, farge) {
-    ctx.beginPath()
-    ctx.rect(x, y, breddex, breddey)
-    ctx.fillStyle = farge
-    ctx.fill()
-}
-
 
 
 function clearCanvas() {
     ctx.clearRect(0, 0, width, height)
 }
 
-
-
 document.addEventListener('coloris:pick', event => {
-    console.log('New color', event.detail.color);
     valgtFarge = event.detail.color
 });
 
@@ -70,7 +61,7 @@ function lagreBilde() {
     downloadLink.click()
 }
 
-function stylePensel(knappId) {
+function stylePenselTjukkelse(knappId) {
 
     tjukkelseId = ["hviskeler", "2pxKnapp", "5pxKnapp", "10pxKnapp", "20pxKnapp"]
 
@@ -84,7 +75,7 @@ function stylePensel(knappId) {
         pxStorrelse = 2
         valgtFarge = "black"
         trykket.style.border = "2px solid black"
-        }
+    }
     else if (knappId == "5pxKnapp") {
         pxStorrelse = 5
         valgtFarge = "black"
@@ -107,13 +98,67 @@ function stylePensel(knappId) {
     }
 }
 
-function mousecordinate(event) {
-    canvas.addEventListener("mousemove", function (event) {
-        if (event.buttons === 1) {
-            let rect = canvas.getBoundingClientRect();
-            yMouse = event.clientY - rect.top
-            xMouse = event.clientX - rect.left
-            rektangel(xMouse, yMouse, pxStorrelse, pxStorrelse, valgtFarge)
-        }
-    })
+function stylePenselFarge(knappId) {
+
+    fargeId = [ "gron", "rod", "blaa", "fyll" ]
+
+    for (let i = 0; i < fargeId.length; i++) {
+        let knapp = document.getElementById(fargeId[i])
+        knapp.style.border = "1px solid black"
+    
+    }
+
+    let trykketFarge = document.getElementById(knappId);
+
+    if (knappId == "gron") {
+        valgtFarge = "green"
+        trykketFarge.style.border = "2px solid black"
+    }
+
+    else if (knappId == "rod"){
+        valgtFarge = "red"
+        trykketFarge.style.border = "2px solid black"
+    }
+    
+    else if (knappId == "blaa") {
+        valgtFarge = "blue"
+        trykketFarge.style.border = "2px solid black"        
+    }
+
+    else if (knappId == "fyll"){
+        trykketFarge.style.border = "2px solid black"
+        
+    }
 }
+
+
+
+canvas.addEventListener("mousedown", function (event) {
+    detTegnes = true
+    let rect = canvas.getBoundingClientRect();
+    xMouse = event.clientX - rect.left
+    yMouse = event.clientY - rect.top
+
+})
+
+canvas.addEventListener("mouseup", function (event) {
+    detTegnes = false
+    ctx.stroke()
+    ctx.beginPath()
+})
+
+canvas.addEventListener("mousemove", function (event) {
+    if (event.buttons === 1) {
+       
+        let rect = canvas.getBoundingClientRect();
+        xMouse = event.clientX - rect.left
+        yMouse = event.clientY - rect.top
+
+        ctx.lineWidth = pxStorrelse;
+        ctx.lineCap = 'round';
+        ctx.strokeStyle = valgtFarge;
+
+        ctx.lineTo(xMouse, yMouse);
+        ctx.stroke();
+    }
+})
