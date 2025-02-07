@@ -5,8 +5,9 @@ const canvas = document.querySelector('canvas')
 const ctx = canvas.getContext('2d')
 
 const tegnebrett = document.querySelector('.tegnebrett')
-const farge1 = document.getElementById('farge1')
-
+const storrelse = document.getElementById("5pxKnapp")
+const svart = document.getElementById("svart")
+const colorPickerIcon = document.getElementById("fa-eye-dropper")
 
 let inputWidth = document.getElementById('width')
 let inputHeight = document.getElementById('height')
@@ -22,6 +23,8 @@ function start() {
     canvas.height = height
     ctx.fillStyle = 'white'
     ctx.fillRect(0, 0, width, height)
+    storrelse.style.border = "2px solid black"
+    svart.style.border = "2px solid black"
 }
 
 start()
@@ -107,7 +110,7 @@ function stylePenselTjukkelse(knappId) {
 
 function stylePenselFarge(knappId) {
 
-    fargeId = ["gron", "rod", "blaa", "fyll"]
+    fargeId = ["svart", "rod", "blaa", "fyll"]
 
     for (let i = 0; i < fargeId.length; i++) {
         let knapp = document.getElementById(fargeId[i])
@@ -117,8 +120,8 @@ function stylePenselFarge(knappId) {
 
     let trykketFarge = document.getElementById(knappId);
 
-    if (knappId == "gron") {
-        valgtFarge = "green"
+    if (knappId == "svart") {
+        valgtFarge = "svart"
         trykketFarge.style.border = "2px solid black"
     }
 
@@ -168,4 +171,5 @@ canvas.addEventListener("mousemove", function (event) {
 
     ctx.lineTo(xMouse, yMouse);
     ctx.stroke();
+
 })

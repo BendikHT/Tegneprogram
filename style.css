@@ -24,6 +24,8 @@ i{
     margin: 0px 5px 0px 5px
 }
 
+
+
 .tegnebrett{
     display: grid;
     grid-template-columns: 100px auto 100px;
@@ -67,12 +69,23 @@ i{
     margin: 20px;
 }
 
+.fargeboks{ 
+    z-index: 9;
+    
+}
+
 .clr-field input{
     border-radius: 10px;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
 }
+
+.clr-field button{
+    width: 100% !important; 
+}
+
+
 
 .pensel{
     grid-column: 3/4;
@@ -97,6 +110,13 @@ i{
     background-color: blue;
 }
 
-#grøn{
-    background-color: green;
+#svarte{
+    background-color: black;
+}
+
+.fa-eye-dropper{
+    position: absolute;
+    z-index: 10;
+    margin: 0px;
+    pointer-events: none;
 }
