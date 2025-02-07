@@ -26,7 +26,14 @@ function start() {
 
 start()
 
-
+function sirkel(startX, startY, bredde, farge, bredde) {
+    ctx.beginPath()
+    ctx.arc(startX, startY, bredde, 0, Math.PI *2)
+    ctx.fillStyle = farge
+    ctx.fill()
+    ctx.lineWidth = bredde
+    ctx.stroke()
+}
 
 function clearCanvas() {
     ctx.clearRect(0, 0, width, height)
@@ -146,14 +153,6 @@ canvas.addEventListener("mouseup", function (event) {
     ctx.beginPath()
 })
 
-canvas.addEventListener("click", function(event){
-    let rect = canvas.getBoundingClientRect();
-    xMouse = event.clientX - rect.left
-    yMouse = event.clientY - rect.top
-
-    ctx.fillRect(xMouse, yMouse, 5, 5)
-
-})
 
 canvas.addEventListener("mousemove", function (event) {
     if(!detTegnes){
