@@ -100,12 +100,12 @@ function stylePenselTjukkelse(knappId) {
 
 function stylePenselFarge(knappId) {
 
-    fargeId = [ "gron", "rod", "blaa", "fyll" ]
+    fargeId = ["gron", "rod", "blaa", "fyll"]
 
     for (let i = 0; i < fargeId.length; i++) {
         let knapp = document.getElementById(fargeId[i])
         knapp.style.border = "1px solid black"
-    
+
     }
 
     let trykketFarge = document.getElementById(knappId);
@@ -115,17 +115,17 @@ function stylePenselFarge(knappId) {
         trykketFarge.style.border = "2px solid black"
     }
 
-    else if (knappId == "rod"){
+    else if (knappId == "rod") {
         valgtFarge = "red"
         trykketFarge.style.border = "2px solid black"
     }
-    
+
     else if (knappId == "blaa") {
         valgtFarge = "blue"
-        trykketFarge.style.border = "2px solid black"        
+        trykketFarge.style.border = "2px solid black"
     }
 
-    else if (knappId == "fyll"){
+    else if (knappId == "fyll") {
         trykketFarge.style.border = "2px solid black"
     }
 }
@@ -146,18 +146,27 @@ canvas.addEventListener("mouseup", function (event) {
     ctx.beginPath()
 })
 
+canvas.addEventListener("click", function(event){
+    let rect = canvas.getBoundingClientRect();
+    xMouse = event.clientX - rect.left
+    yMouse = event.clientY - rect.top
+
+    ctx.fillRect(xMouse, yMouse, 5, 5)
+
+})
+
 canvas.addEventListener("mousemove", function (event) {
-    if (event.buttons === 1) {
-       
-        let rect = canvas.getBoundingClientRect();
-        xMouse = event.clientX - rect.left
-        yMouse = event.clientY - rect.top
-
-        ctx.lineWidth = pxStorrelse;
-        ctx.lineCap = 'round';
-        ctx.strokeStyle = valgtFarge;
-
-        ctx.lineTo(xMouse, yMouse);
-        ctx.stroke();
+    if(!detTegnes){
+        return
     }
+    let rect = canvas.getBoundingClientRect();
+    xMouse = event.clientX - rect.left
+    yMouse = event.clientY - rect.top
+
+    ctx.lineWidth = pxStorrelse;
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = valgtFarge;
+
+    ctx.lineTo(xMouse, yMouse);
+    ctx.stroke();
 })
