@@ -17,39 +17,39 @@
     <div class="tegnebrett">
         <div class="farger">
             <div class="fargeboks">
-                <input type="text" data-coloris id="farge1" value="rgb(255, 255, 255)"> 
+                <input type="text" data-coloris id="farge1" value="rgb(255, 255, 255)" title="Velg Farge"> 
                 <i class="fa-solid fa-eye-dropper"></i>
             </div>
-            <button onclick="stylePenselFarge(this.id)" id="svart">
+            <button onclick="stylePenselFarge(this.id)" id="svart" title="Svart">
                 <div class="rgbBoks" id="svarte"></div>
             </button>
-            <button onclick="stylePenselFarge(this.id)" id="rod">
+            <button onclick="stylePenselFarge(this.id)" id="rod" title="Rød">
                 <div class="rgbBoks" id="rød"></div>
             </button>
-            <button onclick="stylePenselFarge(this.id)" id="blaa">
+            <button onclick="stylePenselFarge(this.id)" id="blaa" title="Blå">
                 <div class="rgbBoks" id="blå"></div>
             </button>
-            <button onclick="stylePenselFarge(this.id)" id="fyll"><i class="fa-solid fa-fill"></i></button>
+            <button onclick="stylePenselFarge(this.id)" id="fyll" title="Fyll Lerett"><i class="fa-solid fa-fill"></i></button>
         </div>
         <canvas></canvas>
 
         <div class="tools">
-            <button onclick="clearCanvas()"><i class="fa-solid fa-trash-can"></i></button>
+            <button onclick="clearCanvas()" title="Tøm"><i class="fa-solid fa-trash-can"></i></button>
             <input type="number" id="width" placeholder=" Width" min="500" max="1000" step="10">
             <input type="number" id="height" placeholder=" Height" min="500" max="1000" step="10">
-            <button onclick="lagreBilde()"><i class="fa-solid fa-download"></i></button>
+            <button onclick="lagreBilde()" title="Save Img"><i class="fa-solid fa-download"></i></button>
 
         </div>
 
         <div class="pensel">
-            <button onclick="stylePenselTjukkelse(this.id)" id="hviskeler"><i class="fa-solid fa-eraser"></i></button>
-            <button onclick="stylePenselTjukkelse(this.id)" id="2pxKnapp"><img src="black.jpg" alt="2px" width="2px"
+            <button onclick="stylePenselTjukkelse(this.id)" id="hviskeler" title="Hviskelær"><i class="fa-solid fa-eraser"></i></button>
+            <button onclick="stylePenselTjukkelse(this.id)" id="2pxKnapp" title="2px"><img src="black.jpg" alt="2px" width="2px"
                     height="2px"></button>
-            <button onclick="stylePenselTjukkelse(this.id)" id="5pxKnapp"><img src="black.jpg" alt="5px" width="5px"
+            <button onclick="stylePenselTjukkelse(this.id)" id="5pxKnapp" title="5px"><img src="black.jpg" alt="5px" width="5px"
                     height="5px"></button>
-            <button onclick="stylePenselTjukkelse(this.id)" id="10pxKnapp"><img src="black.jpg" alt="10px" width="10px"
+            <button onclick="stylePenselTjukkelse(this.id)" id="10pxKnapp" title="10px"><img src="black.jpg" alt="10px" width="10px"
                     height="10px"></button>
-            <button onclick="stylePenselTjukkelse(this.id)" id="20pxKnapp"> <img src="black.jpg" alt="20px" width="20px"
+            <button onclick="stylePenselTjukkelse(this.id)" id="20pxKnapp" title="20px"> <img src="black.jpg" alt="20px" width="20px"
                     height="20px"></button>
 
         </div>
