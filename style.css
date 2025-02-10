@@ -103,6 +103,10 @@ i{
     border-radius: 5px;
 }
 
+.pixel{
+    border-radius: 0;
+    background-color: black;
+}
 #rød{
     background-color:red;
 }

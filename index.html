@@ -10,7 +10,7 @@
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.css" />
-    <link rel="icon" type="ico" href="paintbrush.ico">
+    <link rel="icon" type="ico" href="bilder/paintbrush.ico">
 
 </head>
 
@@ -18,7 +18,7 @@
     <div class="tegnebrett">
         <div class="farger">
             <div class="fargeboks">
-                <input type="text" data-coloris id="farge1" value="rgb(255, 255, 255)" title="Velg Farge"> 
+                <input type="text" data-coloris id="farge1" value="rgb(255, 255, 255)" title="Velg Farge">
                 <i class="fa-solid fa-eye-dropper"></i>
             </div>
             <button onclick="stylePenselFarge(this.id)" id="svart" title="Svart">
@@ -30,7 +30,8 @@
             <button onclick="stylePenselFarge(this.id)" id="blaa" title="Blå">
                 <div class="rgbBoks" id="blå"></div>
             </button>
-            <button onclick="stylePenselFarge(this.id)" id="fyll" title="Fyll Lerett"><i class="fa-solid fa-fill"></i></button>
+            <button onclick="stylePenselFarge(this.id)" id="fyll" title="Fyll Lerett"><i
+                    class="fa-solid fa-fill"></i></button>
         </div>
         <canvas></canvas>
 
@@ -43,15 +44,20 @@
         </div>
 
         <div class="pensel">
-            <button onclick="stylePenselTjukkelse(this.id)" id="hviskeler" title="Hviskelær"><i class="fa-solid fa-eraser"></i></button>
-            <button onclick="stylePenselTjukkelse(this.id)" id="2pxKnapp" title="2px"><img src="black.jpg" alt="2px" width="2px"
-                    height="2px"></button>
-            <button onclick="stylePenselTjukkelse(this.id)" id="5pxKnapp" title="5px"><img src="black.jpg" alt="5px" width="5px"
-                    height="5px"></button>
-            <button onclick="stylePenselTjukkelse(this.id)" id="10pxKnapp" title="10px"><img src="black.jpg" alt="10px" width="10px"
-                    height="10px"></button>
-            <button onclick="stylePenselTjukkelse(this.id)" id="20pxKnapp" title="20px"> <img src="black.jpg" alt="20px" width="20px"
-                    height="20px"></button>
+            <button onclick="stylePenselTjukkelse(this.id)" id="hviskeler" title="Hviskelær"><i
+                    class="fa-solid fa-eraser"></i></button>
+            <button onclick="stylePenselTjukkelse(this.id)" id="2pxKnapp" title="2px">
+                <div class="rgbBoks pixel" style="width: 2px; height: 2px;"></div>
+            </button>
+            <button onclick="stylePenselTjukkelse(this.id)" id="5pxKnapp" title="5px">
+                <div class="rgbBoks pixel" style="width: 5px; height: 5px;"></div>
+            </button>
+            <button onclick="stylePenselTjukkelse(this.id)" id="10pxKnapp" title="10px">
+                <div class="rgbBoks pixel" style="width: 10px; height: 10px;"></div>
+            </button>
+            <button onclick="stylePenselTjukkelse(this.id)" id="20pxKnapp" title="20px">
+                <div class="rgbBoks pixel"style="width: 20px; height: 20px;"></div>
+            </button>
 
         </div>
 
