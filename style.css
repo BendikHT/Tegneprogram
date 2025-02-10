@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -24,7 +25,24 @@ i{
     margin: 0px 5px 0px 5px
 }
 
+#logo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Monoton", serif;
+    font-size: 40px;
+}
 
+
+#logoImg{
+    height: 50px;
+    margin: 2px;
+}
 
 .tegnebrett{
     display: grid;
